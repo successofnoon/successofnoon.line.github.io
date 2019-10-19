@@ -1,0 +1,70 @@
+<style type="text/css">
+* {box-sizing: border-box;}
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 101.30%;
+	overflow: hidden;
+	text-align: center;
+}
+form {
+                padding-bottom: 1em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+                padding-top: 1.5em;
+                width: 100%;
+                text-align: center;
+                height: auto;
+                background-color: #00608f;
+                color: #fff;
+                font-size: 1em;
+                border: 1px solid #ddd;
+                box-shadow: 1px 3px 8px black;
+                overflow: hidden;
+            }
+h5, h6 {margin: 0; padding: 3px;}
+input[TYPE="TEXT"], select, input[TYPE="SUBMIT"], input[TYPE="RESET"], strong, button {
+                padding-bottom: 6px;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 6px;
+                margin-bottom: auto;
+                width: 99%;
+                text-align: center;
+                border-radius: 6px;
+            }
+            
+            input[TYPE="TEXT"], select {
+                background-color: #fff;
+                color: #444;
+            }
+input[TYPE="SUBMIT"] {
+                background-color: ghostwhite;
+                color: #444;
+                font-weight: bold;
+            }
+            
+            input[TYPE="RESET"] {
+                background-color: #004e75;
+                color: #fff;
+            }
+            
+            button, a#myLink1 {
+                background-color: #006699;
+                color: #fff;
+                text-decoration: none;
+            }
+            
+            strong a {
+                background-color: transparent;
+                color: yellow;
+                font-size: 1.3em;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            
+            input[TYPE="TEXT"]:hover, select:hover, input[TYPE="SUBMIT"]:hover, input[TYPE="RESET"]:hover, button:hover, a#myLink1:hover {
+                background-color: lightyellow;
+                color: #333;
+            }
+</style>
