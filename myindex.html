@@ -405,16 +405,16 @@
         ?>
         
         <form name="myForm1" id="myForm1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <h5>???????????</h5>
+            <h5>เครื่องคำนวน</h5>
             <h6>FS EXCHANGER</h6>
             <p>
-                <label for="coin" lang="th">???????????</label><br>
-                <input name="coin" id="coin" size="30" maxlength="10" value="<?php echo $coin; ?>" placeholder="???????????" type="text">
+                <label for="coin" lang="th">จำนวน</label><br>
+                <input name="coin" id="coin" size="30" maxlength="10" value="<?php echo $coin; ?>" placeholder="ขั้นต่ำ 100" type="text">
             </p>
             <p>
-                <label for="products" lang="th">???????????</label><br>
+                <label for="products" lang="th"> เลือกบันชี </label><br>
                 <select name="products" id="products" size="1">
-                    <option value=""<?php if(isset($products) && $products == "") {?> selected="selected";<?php } ?>><?php echo "- ???????????????? -" ?></option>
+                    <option value=""<?php if(isset($products) && $products == "") {?> selected="selected";<?php } ?>><?php echo "- เลือกบันชี -" ?></option>
                     <option value="PayPal"<?php if(isset($products) && $products == "PayPal") {?> selected="selected";<?php } ?>><?php echo "PayPal" ?></option>
                     <option value="Web Money"<?php if(isset($products) && $products == "Web Money") {?> selected="selected";<?php } ?>><?php echo "Web Money" ?></option>
                     <option value="Perfect Money"<?php if(isset($products) && $products == "Perfect Money") {?> selected="selected";<?php } ?>><?php echo "Perfect Money" ?></option>
@@ -425,9 +425,9 @@
                 </select>
             </p>
             <p>
-                <label for="currencies" lang="th">????????</label><br>
+                <label for="currencies" lang="th"> สกุลเงิน </label><br>
                 <select name="currencies" id="currencies" size="1">
-                    <option value=""<?php if(isset($currencies) && $currencies == "Skrill") {?> selected="selected";<?php } ?>><?php echo "- ????????????? -" ?></option>
+                    <option value=""<?php if(isset($currencies) && $currencies == "") {?> selected="selected";<?php } ?>><?php echo "- สกุลเงิน -" ?></option>
                     <option value="USD"<?php if(isset($currencies) && $currencies == "USD") {?> selected="selected";<?php } ?>><?php echo "USD" ?></option>
                     <option value="GBP"<?php if(isset($currencies) && $currencies == "GBP") {?> selected="selected";<?php } ?>><?php echo "GBP" ?></option>
                     <option value="EUR"<?php if(isset($currencies) && $currencies == "EUR") {?> selected="selected";<?php } ?>><?php echo "EUR" ?></option>
@@ -435,17 +435,17 @@
                 </select>
             </p>
             <p><br>
-                <input name="submit" id="submit" value="?????" type="submit">
+                <input name="submit" id="submit" value=" คำนวน " type="submit">
             </p>
             <p>
-                <label for="result" lang="th">??????</label><br>
-                <strong><a><?php echo "$result" ?></a> ??????</strong>
+                <label for="result" lang="th"> แลกได้ </label><br>
+                <strong><a><?php echo "$result" ?></a> บาท </strong>
             </p>
             <p>
-                <button><a name="myLink1" id="myLink1" href="#" target="_self" lang="th">???????</a></button>
+                <button><a name="myLink1" id="myLink1" href="#" target="_self" lang="th"> แจ้งโอน </a></button>
             </p>
             <p>
-                <input name="reset" id="reset" value="??????" type="reset">
+                <input name="reset" id="reset" value=" คำนวนใหม่ " type="reset">
             </p>
         </form>
         
