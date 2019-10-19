@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="th" id="myForm">
+    <head>
+        <meta charset="UTF-8">
+        <title>FS EXCHANGER</title>
+        
+        <style type="text/css">
+            * {box-sizing: border-box;}
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 101.30%;
+                max-width: 300px;
+                overflow: hidden;
+                text-align: center;
+            }
+            
+            form {
+                padding-bottom: 1em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+                padding-top: 1.5em;
+                width: 100%;
+                text-align: center;
+                height: auto;
+                background-color: #00608f;
+                color: #fff;
+                font-size: 1em;
+                border: 1px solid #ddd;
+                box-shadow: 1px 3px 8px black;
+                overflow: hidden;
+            }
+            
+            h5, h6 {margin: 0; padding: 3px;}
+            
+            input[TYPE="TEXT"], select, input[TYPE="SUBMIT"], input[TYPE="RESET"], strong, button {
+                padding-bottom: 6px;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 6px;
+                margin-bottom: auto;
+                width: 99%;
+                text-align: center;
+                border-radius: 6px;
+            }
+            
+            input[TYPE="TEXT"], select {
+                background-color: #fff;
+                color: #444;
+            }
+            
+            input[TYPE="SUBMIT"] {
+                background-color: ghostwhite;
+                color: #444;
+                font-weight: bold;
+            }
+            
+            input[TYPE="RESET"] {
+                background-color: #004e75;
+                color: #fff;
+            }
+            
+            button, a#myLink1 {
+                background-color: #006699;
+                color: #fff;
+                text-decoration: none;
+            }
+            
+            strong a {
+                background-color: transparent;
+                color: yellow;
+                font-size: 1.3em;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            
+            input[TYPE="TEXT"]:hover, select:hover, input[TYPE="SUBMIT"]:hover, input[TYPE="RESET"]:hover, button:hover, a#myLink1:hover {
+                background-color: lightyellow;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <?php
+         // define variables and set to empty values
+        $coin = $products = $currencies = $result = "";
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (empty($_POST["coin"])) {
+                $coin = "";
+            } else {
+                $coin = test_input($_POST["coin"]);
+            }
+            if (empty($_POST["products"])) {
+                $products = "";
+            } else {
+                $products = test_input($_POST["products"]);
+            }
+            
+            if (empty($_POST["currencies"])) {
+                $currencies = "";
+            } else {
+                $currencies = test_input($_POST["currencies"]);
+            }
+            if (empty($_POST["result"])) {
+                $result = NAN;
+            } else {
+                $result = test_input($_POST["result"]);
+            }
+            if (isset($coin) && $coin <= 500) {
+                if (isset($products) && $products == "PayPal") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "Web Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 29.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 44.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 39.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 20.50;
+                    }
+                } else if (isset($products) && $products == "Perfect Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "Neteller") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "OK Pay") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "PayCo") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "Skrill") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                }
+            } else if (isset($coin) && $coin <= 1000) {
+                if (isset($products) && $products == "PayPal") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "Web Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.00;
+                    }
+                } else if (isset($products) && $products == "Perfect Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "Neteller") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "OK Pay") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "PayCo") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "Skrill") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                }
+            } else if (isset($coin) && $coin <= 1500) {
+                if (isset($products) && $products == "PayPal") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Web Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "Perfect Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Neteller") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "OK Pay") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "PayCo") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Skrill") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                }
+            } else if (isset($coin) && $coin <= 2000) {
+                if (isset($products) && $products == "PayPal") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 47.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 42.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 23.00;
+                    }
+                } else if (isset($products) && $products == "Web Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 23.00;
+                    }
+                } else if (isset($products) && $products == "Perfect Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "Neteller") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "OK Pay") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "PayCo") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                } else if (isset($products) && $products == "Skrill") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.00;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.00;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.00;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.00;
+                    }
+                }
+            } else if (isset($coin) && $coin >= 2001) {
+                if (isset($products) && $products == "PayPal") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 32.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Web Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 30.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 45.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 40.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 21.50;
+                    }
+                } else if (isset($products) && $products == "Perfect Money") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Neteller") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "OK Pay") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "PayCo") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                } else if (isset($products) && $products == "Skrill") {
+                    if (isset($currencies) && $currencies == "USD") {
+                        $result = $coin * 31.50;
+                    } else if (isset($currencies) && $currencies == "GBP") {
+                        $result = $coin * 46.50;
+                    } else if (isset($currencies) && $currencies == "EUR") {
+                        $result = $coin * 41.50;
+                    } else if (isset($currencies) && $currencies == "SGD") {
+                        $result = $coin * 22.50;
+                    }
+                }
+            }
+        }
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripcslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+        ?>
+        
+        <form name="myForm1" id="myForm1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <h5>???????????</h5>
+            <h6>FS EXCHANGER</h6>
+            <p>
+                <label for="coin" lang="th">???????????</label><br>
+                <input name="coin" id="coin" size="30" maxlength="10" value="<?php echo $coin; ?>" placeholder="???????????" type="text">
+            </p>
+            <p>
+                <label for="products" lang="th">???????????</label><br>
+                <select name="products" id="products" size="1">
+                    <option value=""<?php if(isset($products) && $products == "") {?> selected="selected";<?php } ?>><?php echo "- ???????????????? -" ?></option>
+                    <option value="PayPal"<?php if(isset($products) && $products == "PayPal") {?> selected="selected";<?php } ?>><?php echo "PayPal" ?></option>
+                    <option value="Web Money"<?php if(isset($products) && $products == "Web Money") {?> selected="selected";<?php } ?>><?php echo "Web Money" ?></option>
+                    <option value="Perfect Money"<?php if(isset($products) && $products == "Perfect Money") {?> selected="selected";<?php } ?>><?php echo "Perfect Money" ?></option>
+                    <option value="Neteller"<?php if(isset($products) && $products == "Neteller") {?> selected="selected";<?php } ?>><?php echo "Neteller" ?></option>
+                    <option value="OK Pay"<?php if(isset($products) && $products == "OK Pay") {?> selected="selected";<?php } ?>><?php echo "OK Pay" ?></option>
+                    <option value="PayCo"<?php if(isset($products) && $products == "PayCo") {?> selected="selected";<?php } ?>><?php echo "PayCo" ?></option>
+                    <option value="Skrill"<?php if(isset($products) && $products == "Skrill") {?> selected="selected";<?php } ?>><?php echo "Skrill" ?></option>
+                </select>
+            </p>
+            <p>
+                <label for="currencies" lang="th">????????</label><br>
+                <select name="currencies" id="currencies" size="1">
+                    <option value=""<?php if(isset($currencies) && $currencies == "Skrill") {?> selected="selected";<?php } ?>><?php echo "- ????????????? -" ?></option>
+                    <option value="USD"<?php if(isset($currencies) && $currencies == "USD") {?> selected="selected";<?php } ?>><?php echo "USD" ?></option>
+                    <option value="GBP"<?php if(isset($currencies) && $currencies == "GBP") {?> selected="selected";<?php } ?>><?php echo "GBP" ?></option>
+                    <option value="EUR"<?php if(isset($currencies) && $currencies == "EUR") {?> selected="selected";<?php } ?>><?php echo "EUR" ?></option>
+                    <option value="SGD"<?php if(isset($currencies) && $currencies == "SGD") {?> selected="selected";<?php } ?>><?php echo "SGD" ?></option>
+                </select>
+            </p>
+            <p><br>
+                <input name="submit" id="submit" value="?????" type="submit">
+            </p>
+            <p>
+                <label for="result" lang="th">??????</label><br>
+                <strong><a><?php echo "$result" ?></a> ??????</strong>
+            </p>
+            <p>
+                <button><a name="myLink1" id="myLink1" href="#" target="_self" lang="th">???????</a></button>
+            </p>
+            <p>
+                <input name="reset" id="reset" value="??????" type="reset">
+            </p>
+        </form>
+        
+        <script>
+        
+        </script>
+    </body>
+</html>
